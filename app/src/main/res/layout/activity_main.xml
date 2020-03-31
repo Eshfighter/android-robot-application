@@ -1,0 +1,1114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/brain"
+        android:layout_width="match_parent"
+        android:layout_height="1500dp"
+        android:src="@drawable/active">
+
+    </pl.droidsonroids.gif.GifImageView>
+
+    <SurfaceView
+        android:id="@+id/surface"
+        android:layout_width="1px"
+        android:layout_height="1px" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:visibility="invisible">
+
+        <ImageButton
+            android:id="@+id/sendSleep"
+            style="@style/text_style"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/button_stop" />
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="1dp" />
+
+        <ImageButton
+            android:id="@+id/sendWakeUp"
+            style="@style/text_style"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/button_start" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/getMarkersList"
+            android:layout_width="400dp"
+            android:layout_height="match_parent"
+            android:background="#6a0dad"
+            android:text="position markers"
+            android:textColor="#ffffff"
+            android:textSize="40dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <!--Face recognition related-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout style="@style/ll_vertical_style">
+
+                    <SurfaceView
+                        android:layout_width="match_parent"
+                        android:layout_height="600dp"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        style="@style/ll_horizontal_style"
+                        android:layout_width="333dp">
+
+                        <Button
+                            android:id="@+id/searchFace"
+                            style="@style/text_style"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:text="Start" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/stopSearchFace"
+                            style="@style/text_style"
+                            android:layout_width="100dp"
+                            android:text="Stop" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/title_style"
+                    android:text="Face recognition" />
+            </RelativeLayout>
+
+            <!--实时心跳数据-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout style="@style/ll_vertical_style">
+
+                    <TextView
+                        android:id="@+id/tv_heart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:textSize="20dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/title_style"
+                    android:text="Real-time heartbeat data" />
+
+            </RelativeLayout>
+
+            <!--网络相关-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout style="@style/ll_vertical_style">
+
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <TextView
+                            android:id="@+id/testEnd"
+                            style="@style/text_style"
+                            android:text="Motherboard external network ping value：" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <TextView
+                            android:id="@+id/testIntraEnd"
+                            style="@style/text_style"
+                            android:text="Motherboard internal network ping value：" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <TextView
+                            android:id="@+id/testAIUIEnd"
+                            style="@style/text_style"
+                            android:text="
+    Core board external network ping value：" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <TextView
+                            android:id="@+id/testAIUIIntraEnd"
+                            style="@style/text_style"
+                            android:text="Core board ping value：" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <TextView
+                            android:id="@+id/OutNetState"
+                            style="@style/text_style"
+                            android:text="External network status:" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <TextView
+                            android:id="@+id/IntraState"
+                            style="@style/text_style"
+                            android:text="Intranet status：" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/title_style"
+                    android:text="network status" />
+            </RelativeLayout>
+
+            <!--机器相关-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout style="@style/ll_vertical_style">
+
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Button
+                            android:id="@+id/hideStatus"
+                            style="@style/text_style"
+                            android:text="Hide status bar and virtual buttons" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/showStatus"
+                            style="@style/text_style"
+                            android:text="Display status bar and virtual buttons" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Button
+                            android:id="@+id/getProductId"
+                            style="@style/text_style"
+                            android:text="Get the machine number" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <TextView
+                            android:id="@+id/productId"
+                            style="@style/text_style"
+                            android:text="The machine number is：" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/title_style"
+                    android:text="Machine related" />
+            </RelativeLayout>
+
+            <!--语音相关-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout style="@style/ll_vertical_style">
+
+                    <TextView
+                        android:id="@+id/listen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="50dp"
+                        android:text="Heard text："
+                        android:textSize="22dp" />
+
+                    <TextView
+                        android:id="@+id/speak"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="50dp"
+                        android:text="Spoken text："
+                        android:textSize="22dp" />
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <TextView
+                            android:id="@+id/type"
+                            style="@style/text_style"
+                            android:text="trigger skill：" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <TextView
+                            android:id="@+id/intent"
+                            style="@style/text_style"
+                            android:text="Trigger intent:" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <!--                        <Button-->
+                        <!--&lt;!&ndash;                            android:id="@+id/sendSleep"&ndash;&gt;-->
+                        <!--                            style="@style/text_style"-->
+                        <!--                            android:text="Send sleep command" />-->
+
+                        <!--                        <View-->
+                        <!--                            android:layout_width="20dp"-->
+                        <!--                            android:layout_height="1dp" />-->
+
+                        <!--                        <Button-->
+                        <!--&lt;!&ndash;                            android:id="@+id/sendWakeUp"&ndash;&gt;-->
+                        <!--                            style="@style/text_style"-->
+                        <!--                            android:text="Send wake-up command" />-->
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Button
+                            android:id="@+id/sendSpeakTxt"
+                            style="@style/text_style"
+                            android:text="The number as a TXT broadcast " />.
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/sendSpeakNum"
+                            style="@style/text_style"
+                            android:text="As a digital broadcast " />.
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Button
+                            android:id="@+id/setSleepTime"
+                            style="@style/text_style"
+                            android:text="Set the sleep time to 10s" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/getSleepTime"
+                            style="@style/text_style"
+                            android:text="Get sleep time" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Button
+                            android:id="@+id/setASRScene"
+                            style="@style/text_style"
+                            android:text="Switch to a silent scene" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/setMainScene"
+                            style="@style/text_style"
+                            android:text="Switch back to the main scene" />
+
+                        <Button
+                            android:id="@+id/requestScene"
+                            style="@style/text_style"
+                            android:text="Get the current voice scene" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/sendStopAudio"
+                            style="@style/text_style"
+                            android:text="Stop audio playback in AIUIUtility" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Button
+                            android:id="@+id/showServiceToast"
+                            style="@style/text_style"
+                            android:text="Toast showing the identified content" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/hideServiceToast"
+                            style="@style/text_style"
+                            android:text="
+    Hide Toast to identify content" />
+
+                        <Button
+                            android:id="@+id/textWrite"
+                            style="@style/text_style"
+                            android:text="Text interaction" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Button
+                            android:id="@+id/setContinuousMode"
+                            style="@style/text_style"
+                            android:text="
+    Set to default interaction mode" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/setOneShotMode"
+                            style="@style/text_style"
+                            android:text="Set to single interaction mode" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Button
+                            android:id="@+id/pauseTTS"
+                            style="@style/text_style"
+                            android:text="Voice broadcast pause" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/resumeTTS"
+                            style="@style/text_style"
+                            android:text="Voice broadcast continues" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <EditText
+                            android:id="@+id/text"
+                            style="@style/text_style"
+                            android:text="weather" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Button
+                            android:id="@+id/startSPKProgress"
+                            style="@style/text_style"
+                            android:text="Start sending voice announcement progress" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/stopSPKProgress"
+                            style="@style/text_style"
+                            android:text="Stop sending voice announcements" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <TextView
+                            style="@style/text_style"
+                            android:text="
+    The broadcast progress is：" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <TextView
+                            android:id="@+id/speakProgress"
+                            style="@style/text_style"
+                            android:text="" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/title_style"
+                    android:text="Voice related" />
+            </RelativeLayout>
+
+            <!--机器移动相关-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout style="@style/ll_vertical_style">
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <TextView
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:text="Point name："
+                            android:textSize="22dp" />
+
+                        <Spinner
+                            android:id="@+id/PositionSpinner"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="22dp" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/leadTo"
+                            style="@style/text_style"
+                            android:text="Lead" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Button
+                            android:id="@+id/turnLeft"
+                            style="@style/text_style"
+                            android:text="Turn left 60°" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/turnRight"
+                            style="@style/text_style"
+                            android:text="Turn right 60°" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Button
+                            android:id="@+id/robotStatus"
+                            style="@style/text_style"
+                            android:text="Get chassis status" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/getMarkersCount"
+                            style="@style/text_style"
+                            android:text="Get the number of points" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Button
+                            android:id="@+id/backToCharge"
+                            style="@style/text_style"
+                            android:text="Back charging pile" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/moveCancel"
+                            style="@style/text_style"
+                            android:text="Cancel move" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Button
+                            android:id="@+id/openSoftEStop"
+                            style="@style/text_style"
+                            android:text="on soft emergency stop" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/closeSoftEStop"
+                            style="@style/text_style"
+                            android:text="
+    Turn off the soft emergency stop" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <EditText
+                            android:id="@+id/rebootTime"
+                            style="@style/text_style"
+                            android:inputType="number"
+                            android:text="1" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/rebootDelay"
+                            style="@style/text_style"
+                            android:text="Start after minutes" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Button
+                            android:id="@+id/reboot"
+                            style="@style/text_style"
+                            android:text="Restart the whole machine" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/shutDown"
+                            style="@style/text_style"
+                            android:text="Shut down" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Button
+                            android:id="@+id/scrollMarkers"
+                            style="@style/text_style"
+                            android:text="Click to select multi-point moving point" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/queryBrief"
+                            style="@style/text_style"
+                            android:text="Get point summary information" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Button
+                            android:id="@+id/requestMarkersList"
+                            style="@style/text_style"
+                            android:text="
+    Get a list of all points on the map" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/requestFloorMarkers"
+                            style="@style/text_style"
+                            android:text="Get the list of points on the current floor" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <LinearLayout
+                            style="@style/text_style"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Marker Name:" />
+
+                            <EditText
+                                android:id="@+id/insertPoseName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="X:" />
+
+                            <EditText
+                                android:id="@+id/insertPoseX"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Y:" />
+
+                            <EditText
+                                android:id="@+id/insertPoseY"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="theta:" />
+
+                            <EditText
+                                android:id="@+id/insertPoseTheta"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/insertByPose"
+                            style="@style/text_style"
+                            android:text="
+    Insert point by coordinate" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Spinner
+                            android:id="@+id/deleteMarkerSpinner"
+                            style="@style/text_style" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/deleteMarker"
+                            style="@style/text_style"
+                            android:text="Delete point" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <LinearLayout
+                            style="@style/text_style"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="X:" />
+
+                            <EditText
+                                android:id="@+id/adjustPoseX"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Y:" />
+
+                            <EditText
+                                android:id="@+id/adjustPoseY"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="theta:" />
+
+                            <EditText
+                                android:id="@+id/adjustPoseTheta"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:inputType="numberDecimal" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/adjustByPose"
+                            style="@style/text_style"
+                            android:text="Correct position by coordinates" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Button
+                            android:id="@+id/diagnosis"
+                            style="@style/text_style"
+                            android:text="Get chassis self-test results" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/powerStatus"
+                            style="@style/text_style"
+                            android:text="Get current battery status" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <EditText
+                            android:id="@+id/lumValue"
+                            style="@style/text_style"
+                            android:inputType="number" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/luminance"
+                            style="@style/text_style"
+                            android:text="
+    Set the maximum brightness of the chassis light strip" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_horizontal_style">
+
+                        <Button
+                            android:id="@+id/wifiListDetail"
+                            style="@style/text_style"
+                            android:text="Details of the WiFi list searched by the chassis" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/Velocity"
+                            style="@style/text_style"
+                            android:text="Real-time speed"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/ll_horizontal_style"
+                        android:visibility="gone">
+
+                        <Button
+                            android:id="@+id/startStroll"
+                            style="@style/text_style"
+                            android:text="Start cruising" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/stopStroll"
+                            style="@style/text_style"
+                            android:text="Stop the cruise"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/title_style"
+                    android:text="Machine movement related" />
+            </RelativeLayout>
+
+            <!--发音人切换-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    style="@style/ll_vertical_style"
+                    android:gravity="center"
+                    android:paddingLeft="60dp"
+                    android:paddingRight="60dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="50dp"
+                            android:text="Tone"
+                            android:textSize="22dp" />
+
+                        <SeekBar
+                            android:id="@+id/intonation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:max="100"
+                            android:progress="50" />
+
+                        <TextView
+                            android:id="@+id/intonationTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="50dp"
+                            android:text="50"
+                            android:textSize="22dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="50dp"
+                            android:text="Speech rate"
+                            android:textSize="22dp" />
+
+                        <SeekBar
+                            android:id="@+id/talkingSpeed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:max="100"
+                            android:progress="50" />
+
+                        <TextView
+                            android:id="@+id/talkingSpeedTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="50dp"
+                            android:text="50"
+                            android:textSize="22dp" />
+                    </LinearLayout>
+
+                    <RadioGroup
+                        android:id="@+id/voicer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/voicer_xiaofeng"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="60dp"
+                            android:text="Xiaofeng"
+                            android:textSize="22dp" />
+
+                        <RadioButton
+                            android:id="@+id/voicer_xiaoyan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:checked="true"
+                            android:text="Xiaoyan"
+                            android:textSize="22dp" />
+
+                        <RadioButton
+                            android:id="@+id/voicer_xiaotong"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="Xiao Yan"
+                            android:textSize="22dp" />
+
+                        <RadioButton
+                            android:id="@+id/voicer_xiaoxue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="Xiǎoxuě"
+                            android:textSize="22dp" />
+
+                        <RadioButton
+                            android:id="@+id/voicer_xiaohou"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="Xiao Hou"
+                            android:textSize="22dp" />
+
+                        <RadioButton
+                            android:id="@+id/voicer_xiaofang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="Xiaofang"
+                            android:textSize="22dp" />
+
+                        <RadioButton
+                            android:id="@+id/voicer_yueyu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="粤语"
+                            android:textSize="22dp" />
+
+                        <RadioButton
+                            android:id="@+id/voicer_mengmeng"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="萌萌"
+                            android:textSize="22dp" />
+                    </RadioGroup>
+
+                    <Button
+                        android:id="@+id/changeVoicer"
+                        android:layout_width="800dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="点击收听效果"
+                        android:textSize="22dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/title_style"
+                    android:text="发音人切换" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
